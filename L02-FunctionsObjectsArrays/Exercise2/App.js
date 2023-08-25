@@ -1,4 +1,4 @@
-let Array = ["4", "2", "9", "13", "0", "3", "8", "15"];
+let arr = [4, 2, 9, 13, 0, 3, 8, 15];
 
 
 
@@ -11,16 +11,16 @@ const bubbleSort = (arr) => {
     }
     for (let i = arr.length - 1; i >= 0; i--) {
         for (let j = 0; j <= i; j++) {
-            if(parseInt(arr[j]) > parseInt(arr[j + 1])) {
+            if(arr[j] > arr[j + 1]) {
                 swap(j, j + 1);
             }
         }
     }
 }
 
-bubbleSort(Array);
+bubbleSort(arr);
 
-console.log(Array.toString());
+console.log(arr.toString());
 
 const binarySearch = (arr, x, start = 0, end = arr.length) => {
     if( end < start) return -1;
@@ -35,4 +35,4 @@ const binarySearch = (arr, x, start = 0, end = arr.length) => {
 
 let findNumber = 9;
 
-console.log(`\nBinary search for ${findNumber}: ${binarySearch(Array, findNumber)}`);
+console.log(`\nBinary search for ${findNumber}: ${binarySearch(arr, findNumber)}`);
