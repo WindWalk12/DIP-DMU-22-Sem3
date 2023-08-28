@@ -28,10 +28,14 @@ const mergeTwoArrays = (arr, arr2) => {
     for (let i = 0; i <= length - 1; i++) {
         if(arr[j] < arr2[k]) {
             mergedArray.push(arr[j]);
-            j++;
+            if (j < arr.length - 1) {
+                j++;
+            }
         } else if (arr[j] > arr2[k]) {
             mergedArray.push(arr2[k]);
-            k++;
+            if (k < arr2.length - 1) {
+                k++;
+            }
         } else if (arr[j] == arr2[k]) {
             mergedArray.push(arr[j]);
             mergedArray.push(arr2[k]);
