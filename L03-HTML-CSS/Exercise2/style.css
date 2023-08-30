@@ -1,0 +1,7 @@
+h1 {color: blue;}
+
+table {border-collapse: collapse;}
+
+td {border: 3px solid blue;}
+
+img {width: 100px; height: 100px; object-fit: contain;}

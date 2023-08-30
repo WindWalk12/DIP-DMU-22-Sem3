@@ -1,0 +1,32 @@
+img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    float: left;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 150px 300px;
+    gap: 50px;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 20px;
+    table-layout: fixed;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    float: left;
+}
+
+td {
+    border: 3px solid blue;
+}
