@@ -1,0 +1,27 @@
+h1 {
+    color: red;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.tdData {border: 3px solid blue;}
+
+.headline {
+    font-weight: bold;
+    border: 3px solid blue;
+}
+
+.name, .height {
+    border-right: none;
+}
+
+.height, .place {
+    border-left: none;
+}
+
+th {
+    border: 3px solid blue;
+}
