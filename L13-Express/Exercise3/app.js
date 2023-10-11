@@ -3,30 +3,55 @@ const app = express();
 
 const port = "1234";
 
-let beskeder = [];
+let messages = [];
 
 app.get('/beskeder', (req, res) => {
-    res.send("Test");
+    if (messages.length !== 0) {
+        res.send(messages);
+    } else {
+        res.send("No messages to display")
+    }
+    
 })
 
 app.get('/beskeder/:rum', (req, res) => {
-    //res.send();
+    let messagesFromRoom = [];
+    messages.forEach((msg) => {
+        if(msg.rum == req.params.rum) {
+            messagesFromRoom.push(msg);
+        }
+    })
+    if (messagesFromRoom.length !== 0) {
+        res.send(messagesFromRoom);
+    } else {
+        res.send(`No messages to display from ${req.params.rum}`)
+    }
 })
 
 app.get('/rum', (req, res) => {
-    //res.send();
+    let rooms = [];
+    messages.forEach((msg) => {
+        rooms.push(msg.rum);
+    })
+    if (rooms.length !== 0) {
+        const uniqueRooms = [...new Set(rooms)];
+        res.send(uniqueRooms);
+    } else {
+        res.send(`No rooms to display`)
+    }
 })
 
-app.use(('/besked'), express.json())
-
-app.post('/besked', async (req, res) => {
-    const {name, room, text} = req.body;
-    beskeder.push({"Navn": name, "Rum": room, "Tekst": text});
+let msgNr = 0;
+app.post('/besked', (req, res) => {
+    const {name, room, text} = req.query;
+    messages.push({id: ++msgNr, navn: name, rum: room, tekst: text});
     res.send("Msg saved");
 })
 
 app.delete('/besked/:nr', (req, res) => {
-
+    const nr = req.params.nr;
+    messages.splice(messages.findIndex(msg =>  msg.id == nr), 1);
+    res.send("Msg deleted");
 })
 
 app.listen(port, () => {
