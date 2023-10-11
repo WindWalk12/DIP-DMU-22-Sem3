@@ -14,7 +14,7 @@ function createNode(element) {
 
 let addEqs = async () => {
     let eqs = await get(earthquakeUrl);
-    eqs.features.sort((eq1, eq2) => {return eq1.properties.mag - eq2.properties.mag});
+    eqs.features.sort((eq1, eq2) => {return eq2.properties.mag - eq1.properties.mag});
     let tbody = document.querySelector('tbody');
     eqs.features.forEach(eq => {
         if (parseInt(eq.properties.mag) >= 5) {
