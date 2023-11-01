@@ -1,0 +1,15 @@
+include includes/header
+body
+    table
+        thead
+            tr 
+                th Mag 
+                th Place 
+                th Time
+        tbody
+            each eq in earthquakes
+                tr
+                    td= eq.mag
+                    td= eq.place
+                    td= eq.time
+include includes/footer

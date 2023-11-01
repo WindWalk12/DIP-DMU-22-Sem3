@@ -1,0 +1,11 @@
+h1 {
+    color: brown;
+}
+
+div#cats {
+    background-color: aquamarine;
+}
+
+div#cats ul {
+    list-style-type: none;
+}

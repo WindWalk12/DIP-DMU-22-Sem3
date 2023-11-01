@@ -1,0 +1,13 @@
+include includes/header
+body
+    table
+        thead
+            tr 
+                th Gender 
+                th Name 
+        tbody
+            each ru in randomUsers
+                tr
+                    td= ru.gender
+                    td= ru.name
+include includes/footer

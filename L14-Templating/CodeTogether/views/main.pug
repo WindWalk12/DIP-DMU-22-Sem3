@@ -1,0 +1,10 @@
+include includes/header
+body
+    h1 Hello #{name}
+    p Lorem ipsum
+    #cats
+        ul 
+            each cat in cats
+                li= cat.name
+                    img(src="images/" + cat.image)
+include includes/footer
