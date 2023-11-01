@@ -1,5 +1,4 @@
 const express = require('express');
-const { sourceMapsEnabled } = require('process');
 const pug = require('pug');
 const randomUserUrl = 'https://randomuser.me/api/?nat=dk&results=100';
 
@@ -26,9 +25,8 @@ app.use(express.static(__dirname + '/assets'));
 app.get('/', async (req, res) => {
     let rus = await get(randomUserUrl);
     let randomUsers = []
-    console.log(rus.results);
     rus.results.forEach(ru => {
-        randomUsers.push({gender: ru.gender, name: ru.name.first});
+        randomUsers.push({gender: ru.gender, name: ru.name.first + " " + ru.name.last, country: ru.location.country, picture: ru.picture.large, age: ru.dob.age});
     });
     res.render('main', {randomUsers: randomUsers})
 })
