@@ -1,0 +1,9 @@
+include includes/header
+body
+    include includes/menubar
+    h2 Sessions main site
+    if !knownUser
+        include includes/loginform
+    else 
+        p Welcome you are now logged in
+include includes/footer
