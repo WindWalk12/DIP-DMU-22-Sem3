@@ -9,7 +9,7 @@ port = "1234";
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views')
 
-// Middle ware
+// Middleware
 app.use(express.static(__dirname + '/assets'));
 
 // Routes get, put, post, delete

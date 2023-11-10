@@ -1,0 +1,8 @@
+html 
+    head 
+        title Biler
+    body 
+        ul 
+            each car in cars
+                li
+                    a(href='/cars/' + car.docID) #{car.brand} #{car.model}
