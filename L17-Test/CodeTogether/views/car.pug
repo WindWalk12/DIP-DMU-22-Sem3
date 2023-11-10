@@ -1,0 +1,8 @@
+html 
+    title= Bil
+    script(src='/js/core.js' defer)
+body 
+    h2= car.brand
+    p= car.model
+    button(onclick=`deleteCar('${car.docID}')`) DELETE
+    button(onclick=`window.location='/editCar/${car.docID}'`) EDIT

@@ -1,0 +1,11 @@
+html
+    head 
+        title Redigere bil
+        script(src='/js/core.js' defer)
+    body 
+        h1 Redigere bilen #{car.model}
+        input(type="text" name="brand" value= car.brand)
+        br
+        input(type="text" name="model" value= car.model)
+        br
+        button(onclick=`editCar('${car.docID}')`) EDIT
