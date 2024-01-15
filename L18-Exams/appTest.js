@@ -20,7 +20,6 @@ let findMin = (a, b) => {
     if ((Number.isInteger(a) && Number.isInteger(b) && a < b) || (!Number.isInteger(a) && !Number.isInteger(b) && a < b)) {
         return true
     } else if ((Number.isInteger(a) && !Number.isInteger(b)) || (!Number.isInteger(a) && Number.isInteger(b))) {
-        console.log(a + " " + b);
         throw new Error("Ikke alle typer er ens")
     } else {
         return false
